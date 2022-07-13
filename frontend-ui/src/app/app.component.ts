@@ -9,11 +9,11 @@ import { CategoryService } from './core/services/category/category.service';
 export class AppComponent implements OnInit {
   title = 'social-media-app';
 
-  constructor() {}
+  constructor(private catService: CategoryService) {}
 
   ngOnInit(): void {
-    // this.catService.getCategories().subscribe((data) => {
-    //   console.log(data);
-    // });
+    this.catService.getCategories().subscribe((data) => {
+      console.log(data);
+    });
   }
 }
